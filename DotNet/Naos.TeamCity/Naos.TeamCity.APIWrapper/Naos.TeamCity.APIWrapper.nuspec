@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Naos.TeamCity.APIWrapper</id>
+    <version>1.0.0.0</version>
+    <authors>Naos LLC</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A .NET typed wrapper for the TeamCity API for the common commands.</description>
+    <copyright>Copyright 2014 Naos LLC</copyright>
+    <licenseUrl>http://www.naosllc.com</licenseUrl>
+    <tags>TeamCity, Naos</tags>
+  </metadata>
+  <files>
+    <file src="bin\release\Naos.TeamCity.APIWrapper.dll" target="lib\40" />
+    <file src="bin\release\Naos.TeamCity.APIWrapper.pdb" target="lib\40" />
+  </files>
+</package>
