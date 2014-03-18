@@ -53,7 +53,7 @@
 
         public TCBuildType CreateEmptyBuild(string projectId, string buildName)
         {
-            return this._caller.Post<string, TCBuildType>("/app/rest/projects/id:" + projectId + "/buildTypes", buildName);
+            return this._caller.Post<string, TCBuildType>("/app/rest/projects/id:" + projectId + "/buildTypes", buildName, Caller.CONTENT_TEXT);
         }
 
         public TCBuildType[] GetAllBuildConfigs()

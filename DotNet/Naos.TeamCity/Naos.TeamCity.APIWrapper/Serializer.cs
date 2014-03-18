@@ -1,4 +1,4 @@
-namespace Naos.TeamCity.APIWrapper
+namespace APIWrapper
 {
     using System;
     using System.IO;
@@ -15,7 +15,7 @@ namespace Naos.TeamCity.APIWrapper
 
             if (type == typeof(string))
             {
-                return (T) ((object)rawText);
+                return (T)((object)rawText); // this will be used for plain text calls
             }
 
             XmlRootAttribute r = GetRootAttribute(type);
@@ -31,7 +31,12 @@ namespace Naos.TeamCity.APIWrapper
             var type = typeof(T);
             if (type.Equals(s_objectType))
             {
-                type = obj.GetType();
+                type = obj.GetType(); // this will get actual type, not base or interface
+            }
+
+            if (type == typeof(string))
+            {
+                return obj.ToString(); // this will be used for plain text calls
             }
 
             XmlRootAttribute r = GetRootAttribute(type);
