@@ -1,9 +1,7 @@
-﻿namespace Naos.TeamCity.APIWrapper
+﻿namespace APIWrapper
 {
     using System;
     using System.Web;
-
-    using Naos.TeamCity.APIWrapper.Types;
 
     public class Client
     {
@@ -160,13 +158,13 @@
         {
             var encodedName = HttpUtility.UrlEncode(setting.name);
             var url = string.Format("/app/rest/buildTypes/id:{0}/settings/{1}", buildConfigId, encodedName);
-            return this._caller.Put<string>(url, setting.value, Caller.CONTENT_TEXT);
+            return this._caller.Put<string>(url, setting.value, Caller.CONTENT_TEXT, Caller.CONTENT_TEXT);
         }
 
         public string GetSettingForBuildConfigByBuildConfigIdAndSettingName(string buildConfigId, string settingName)
         {
             var url = string.Format("/app/rest/buildTypes/id:{0}/settings/{1}", buildConfigId, settingName);
-            return this._caller.Get<string>(url, Caller.CONTENT_TEXT);
+            return this._caller.Get<string>(url, Caller.CONTENT_TEXT, Caller.CONTENT_TEXT);
         }
 
         public void DeleteBuildStep(string buildConfigId, TCStep step)
